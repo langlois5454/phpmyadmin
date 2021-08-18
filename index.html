@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Utiliser phpMyAdmin</title>	
+<meta charset="UTF-8">
+<link rel="stylesheet" media="screen" type="text/css" href="style.css"/>
+
+</head>
+<body>
+
+
+
+<div style="text-align: center; font-variant: small-caps; font-family: Calibri, 'Courier New', Courier, monospace; font-size: 36pt; color: blue; border-top: solid; border-bottom: solid;">Utiliser phpMyAdmin</div>
+
+<h1>Fiche identité du document</h1>
+
+
+<p>Auteur : David Langlois, david DOT langlois AT univ TIRET lorraine DOT fr </p>
+
+<p>Licence : <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/fr/" target="_blank"><img alt="Licence Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/3.0/fr/88x31.png" /></a><br />Cette œuvre est mise à disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/fr/" target="_blank">Licence Creative Commons Attribution - Pas d’Utilisation Commerciale - Partage dans les Mêmes Conditions 3.0 France</a>.</p>
+
+<h1>Historique</h1>
+
+
+<p>Version 1.0 : 27/04/2020</p>
+
+<h1>Introduction</h1>
+
+<p><code>phpMyAdmin</code> est une application web permettant de gérer des bases de données sur un serveur. En fait, sur le serveur tourne un serveur de base de données (comme <code>MYSQL</code>), et <code>phpMyAdmin</code> est une application <code>PHP</code> permettant de faire l'interface entre l'utilisateur et le serveur de bases de données.</p>
+
+<h1>Préparer son environnement</h1>
+
+<h2>Avec son propre serveur local</h2>
+
+<p>Quand vous installez tout un paquet serveur <code>web+php+MySQL</code>, comme par exemple, <code>WAMP</code>, vous avez déjà à disposition l'outil <code>phpMyAdmin</code>. Normalement, l'installation a créé pour vous un utilisateur pour le serveur <code>MySQL</code>, et c'est cet utilisateur que vous allez utiliser pour vous connecter au serveur de base de données. En attendant plus d'informations sur quelques unes des nombreuses possibilités de pack, il faut vous reporter à la documentation du pack que vous avez choisi.</p>
+
+<p>Il se peut que votre serveur local inclut un service équivalent à <code>phpMyAdmin</code>, comme <code>adminer</code>. C'est le cas du pack <code>WinNMP</code>. Si vous êtes dans ce cas, allez sur <a href="https://repl.it/@langlois/adminer">cette page</a> qui donne la procédure pour <code>adminer</code></p>
+
+<h2>Avec alwaysdata</h2>
+
+<p>Si vous utilisez l'hébergeur alwaysdata, il faut d'abord créer un utilisateur de bases de données, puis une base de données vide dans laquelle vous allez importer les données de <code>world.sql</code>.</p>
+
+<p>Voici comment faire :</p>
+
+<ul>
+  <li>Connectez-vous sur votre compte alwaysdata</li>
+  <li>Cliquez sur la gauche sur <code>Bases de données/MySQL</code>.</li>
+  <li>Création de l'utilisateur
+  <ul>
+  <li>Cliquez en haut sur <code>Utilisateurs</code></li>
+  <li>Cliquez sur <code>Ajouter un utilisateur</code> (à droite)</li>
+  <li>Donnez un nom à l'utilisateur (il se peut qu'un préfixe vous soit imposé), choisissez un mot de passe</li>
+  <li>Cliquez sur <code>Valider</code></li>
+  </ul>
+  </li>
+  <li>Création de la base de données
+  <ul>
+    <li>Cliquez maintenant sur <code>Bases de Données</code>, en haut</li>
+    <li>Cliquez sur <code>Ajouter une base de données</code></li>
+    <li>Donnez un nom à la base de données, peut-être qu'un préfixe vous sera imposé</li>
+    <li>Donnez tous les droits à l'utilisateur que vous avez créé</li>
+    <li>Cliquez sur <code>Valider</code></li>
+  </ul>  
+  </li>
+</ul>
+
+<p>Ca y est, votre environnement est prêt. Vous allez maintenant utiliser <code>phpMyAdmin</code> pour importer le fichier <code>world.sql</code> dans votre base de données toute neuve (mais vide).</p>
+
+<h1>Importer une base de données avec phpMyAdmin</h1>
+
+<p>Il faut d'abord accéder à <code>phpMyAdmin</code>. Pour ce faire, cela dépend de votre serveur.</p>
+
+<p>Si vous avez un serveur local, il existe normalement une page d'accueil de votre serveur, page qui contient un lien vers <code>phpMyAdmin</code>.</p>
+
+<p>Si vous utilisez alwaysdata, à partir de <code>Bases de données/MySQL</code>, il y a un lien en haut <code>phpMyAdmin</code>. Vous devrez donner comme identifiant et mot de passe les informations associées à l'utilisateur que vous avez créé dans la section précédente.</p>
+
+<p>Maintenant, pour importer le fichier <code>world.sql</code>, voici comment faire :</p>
+
+<ul>
+  <li>Préparer le fichier <code>worldutf8.sql</code>, disponible sur le cours en ligne. En fait, au tout début du cours, ce fichier s'appelait <code>world.sql</code>. Mais certains d'entre-vous se sont rendus compte d'un problème d'encodage. David Grosdemange a proposé une nouvelle version qui corrige ce problème. C'est cette version <code>worldutf8.sql</code> qui est disponible en ligne.</li>
+  <li>Connectez-vous sur le service <code>phpMyAdmin</code></li>
+  <li>Attention important : cliquez sur la base (vide) que vous avez créée précédemment, afin de la sélectionner pour y importer le fichier <code>wordlutf8.sql</code>. Je note "Important", car personnellement, j'oublie systématiquement de le faire</li>
+  <li>Cliquez sur <code>Import</code> dans les onglets du haut</li>
+  <li>Cliquez sur <code>Parcourir</code>, et allez chercher le fichier <code>worldutf8.sql</code></li>
+  <li>Sélectionnez <code>utf-8</code> dans la liste <code>Character set of the file:</code>.</li>
+  <li>Cliquez sur <code>GO</code></li>
+</ul>
+
+<p>Si tout s'est bien passé, au bout de quelques dizaines de secondes, vous voyez apparaître, sur la gauche, dans votre base de données, les trois tables <code>City</code>, <code>Country</code>, et <code>CountryLanguage</code>.</p>
+
+<p>Vous pouvez maintenant vous amuser avec cette base via <code>phpMyAdmin</code>. Pour ce faire, vous pouvez utiliser les ressources diffusées par Marie.</p>
+
+<p>Vous pouvez aussi revenir au <a href="https://repl.it/@langlois/formulaires">document de cours</a> (section Bases de données relationnelles et PHP) afin de voir comment interroger la base directement avec <code>PHP</code>. Mais pour cela, il faut bien mémoriser le nom du serveur <code>MySQL</code> et le nom de la base, donnés en haut de l'interface de <code>phpMyAdmin</code>.</p>
+
+  </body>
+</html>

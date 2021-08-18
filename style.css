@@ -1,0 +1,82 @@
+ul, ol{
+	text-align: justify;
+	font-family: Calibri, "Courier New", Courier, monospace;
+	font-size: 18pt;
+	padding-right: 20px;
+	margin-left: 40px;
+}
+
+li{
+	margin-top: 10px;
+}
+
+p{
+	text-align: justify;
+	font-family: Calibri, "Courier New", Courier, monospace;
+	font-size: 18pt;
+	padding-left: 20px;	
+	padding-right: 20px;	
+	padding-top: 10px;	
+}
+
+p.question{
+	width: 75%;
+	border-style:solid;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 10px;
+	border-radius: 10px;
+	background-color: lightgray;
+	text-align: center;
+}
+
+
+p.code{
+	border: solid;
+	text-align: center;
+	font-family: Courier, monospace;
+	font-size: 18pt;
+	padding-top: 10px;	
+}
+
+pre{
+	padding: 10px;
+	border: solid;
+	font-family: Courier, monospace;
+	font-size: 18pt;
+	padding-top: 10px;	
+}
+
+pre.left{
+	text-align: left;
+}
+
+pre.center{
+	text-align: center;
+}
+
+
+h1{
+	font-family: Calibri, "Courier New", Courier, monospace;
+	color: white;
+    background-color: blue;
+	font-size: 24pt;
+	margin-left: 20px;	
+	margin-right: 20px;	
+	padding-left: 10px;
+}
+h2{
+	font-family: Calibri, "Courier New", Courier, monospace;
+	color: blue;
+    border-right: solid;
+    border-bottom: solid;
+    border-color: blue;
+	font-size: 20pt;
+	margin-left: 20px;	
+	margin-right: 20px;	
+	padding-left: 10px;
+}
+
+.code{
+	font-family:courier;
+}
